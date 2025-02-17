@@ -14,7 +14,7 @@ add(2, 50);
 
 // ex 2
 const randomNumber = () => {
-    let randomNum = Math.random() * 1000;
+    let randomNum = (Math.random() * 100);
     console.log(`random number is -> ${randomNum.toFixed(2)}`)
 };
 randomNumber();
@@ -42,7 +42,7 @@ function printNumbers() {
     let num;
     let result;
 
-    for (let i = 0 ; i <= numsArray.length - 1 ; i++) {
+    for (let i = 0 ; i < numsArray.length ; i++) {
         num = numsArray[i];
         const print = () => {
             result = console.log(`printing... ${num}`);
@@ -84,14 +84,14 @@ const verifyTypeOfNum = (num) => {
     let isPositive = `num is positive`;
 
     num < 0 ? result = isNegative :
-    num == 0 ? result = isZero :
+    num === 0 ? result = isZero :
     result = isPositive;
 
     // num < 0 ? result = isNegative :
     // num > 0 ? result = isPositive :
     // result = isZero;
 
-    console.log(`type of number -> ${result}`);
+    console.log(`${num} type of number -> ${result}`);
 }
 
 verifyTypeOfNum(0);
@@ -107,19 +107,21 @@ function findHigherNum(a, b, c) {
 
     console.log(`highestNum = ${highestNum}`);
 }
+findHigherNum(4, -20, 8);
 
 
 // ex4
 function evenOrOdd() {
-    const numsArray = [23, 678, 43, 6, 2, 3.5, 900];
+    const numsArray = [23, 678, 43, 0, 6, 2, 3.5, 900];
     let num;
     let result;
 
     for (let i = 0 ; i < numsArray.length ; i++) {
         num = numsArray[i];
-        result = num % 2 === 0 ? console.log(`${num} is even`) : console.log(`${num} is odd`) ;
+        num === 0 ? console.log(`${num} is zero`) :
+        num % 2 === 0 ? console.log(`${num} is even`) :
+        console.log(`${num} is odd`) ;
     }
-
 }
 evenOrOdd();
 
@@ -326,19 +328,8 @@ sumOfNumbersOfArray();
 // ex 5
 const arr = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
 
-const multiPurposeCalculatorArrow = arr => { ((arr.filter((num) => num >= 10)).map((num) => num * 2).reduce((total, num) => total + num)); }
-console.log(multiPurposeCalculator(arr));
-
-function multiPurposeCalculator(arr) { return ((arr.filter((num) => num >= 10)).map((num) => num * 2).reduce((total, num) => total + num)); }
-console.log(multiPurposeCalculator(arr));
-
-// console.log(multiPurposeCalculator())
-// const toFindEqualOrMajorThanTen = arr.filter((num) => num >= 10);
-// console.log(toFindEqualOrMajorThanTen);
-// const doubleTheNum = toFindEqualOrMajorThanTen.map((num) => num * 2);
-// console.log(doubleTheNum);
-// const sumOfNums = doubleTheNum.reduce((total, num) => total + num);
-// console.log(sumOfNums);
+const multiPurposeCalculatorArrow = arr => ((arr.filter((num) => num >= 10)).map((num) => num * 2).reduce((total, num) => total + num));
+console.log(multiPurposeCalculatorArrow(arr));
 
 
 // ex 6
@@ -362,7 +353,7 @@ function displayNamesInConsole() {
     }));
     
     // ex 2
-    for (name of namesArr) {
+    for (let name of namesArr) {
         console.log(name);
     }
 }
