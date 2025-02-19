@@ -87,10 +87,6 @@ const verifyTypeOfNum = (num) => {
     num === 0 ? result = isZero :
     result = isPositive;
 
-    // num < 0 ? result = isNegative :
-    // num > 0 ? result = isPositive :
-    // result = isZero;
-
     console.log(`${num} type of number -> ${result}`);
 }
 
@@ -114,7 +110,6 @@ findHigherNum(4, -20, 8);
 function evenOrOdd() {
     const numsArray = [23, 678, 43, 0, 6, 2, 3.5, 900];
     let num;
-    let result;
 
     for (let i = 0 ; i < numsArray.length ; i++) {
         num = numsArray[i];
@@ -162,8 +157,6 @@ function awaitAndGreet(name, greet) {
 }
 
 awaitAndGreet(`Gabs`, greet);
-
-// ex 4 MISSING ❌ ❌ ❌
 
 // LVL 3
 
@@ -214,7 +207,7 @@ function changeProperty() {
 
     console.table(obj1);
     console.table(obj2);
-    console.table([obj1, obj2]); // agrupados
+    console.table([obj1, obj2]);
 }
 
 changeProperty();
@@ -478,10 +471,6 @@ async function helloWorldDelayedTryCatch() {
 
 helloWorldDelayedTryCatch();
 
-
-// Promise.all: Crea dues promeses que es resolguin després de 2 i 3 segons respectivament.
-// Utilitza Promise.all per a esperar que ambdues promeses es resolguin
-// i imprimeix els resultats a la consola.
 
 // ex 6
 async function twoPromisesAtOnce() {
